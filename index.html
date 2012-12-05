@@ -24,19 +24,19 @@ $('.bxslider').bxSlider({
 	touchEnabled: false
 });
 
-$(document).ready(function(e) {
+$(document).ready(function() {
   
-	$('.bxslider li').swipeLeft(
+	$$('.bxslider li').swipeLeft(
 		function() {
-		 alert('ok');
+		 alert('swipe left');
 	});
 	
-	$('.bxslider li').pinchOut(
+	$$('.bxslider').pinchOut(
 		function() {
 		 alert('zoom out');
 	});
 
-	$('.bxslider li').pinchIn(
+	$$('.bxslider').pinchIn(
 		function() {
 		 alert('zoom in');
 	});
