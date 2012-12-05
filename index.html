@@ -23,10 +23,25 @@ $('.bxslider').bxSlider({
   mode: 'horizontal'
 });
 
-$('.bxslider').swipeLeft(
-	function() {
-	 alert('ok');
+$(document).ready(function(e) {
+  
+	$('.bxslider li').swipeLeft(
+		function() {
+		 alert('ok');
+	});
+	
+	$('.bxslider li').pinchOut(
+		function() {
+		 alert('zoom out');
+	});
+
+	$('.bxslider li').pinchIn(
+		function() {
+		 alert('zoom in');
+	});
+
 });
+
 </script>
 
 </body>
