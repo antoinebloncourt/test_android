@@ -5,52 +5,13 @@
 <title>Android</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-<script type="text/javascript" src="js/quo.js"></script>
 <script src="js/jquery.min.js"></script>
-<script src="js/jquery.bxslider.js"></script>
 </head>
 <body>
 
-<ul class="bxslider">
-  <li><img src="flight_folder/fplna.gif" width="600"></li>
-  <li><img src="flight_folder/fplnb.gif" width="600"></li>
-  <li><img src="flight_folder/fplnc.gif" width="600"></li>
-</ul>
-
-<script type="text/javascript">
-$('.bxslider').bxSlider({
-  adaptiveHeight: true,
-  mode: 'horizontal',
-	touchEnabled: false
-});
-
-$(document).ready(function() {
-  slider = $('.bxslider').bxSlider();
-	
-	$$('.bxslider').swipeLeft(
-		function() {
-			slider.goToNextSlide();	
-	});
-
-	$$('.bxslider').swipeRight(
-		function() {
-			slider.goToPrevSlide();	
-	});
-	
-	$$('.bxslider').pinchOut(
-		function() {
-		 alert('zoom In');
-	});
-
-	$$('.bxslider').pinchIn(
-		function() {
-		 alert('zoom Out');
-	});
-
-});
-
-</script>
-
+<a href="iscroll/examples/carousel/index.html">Example 1</a>
+<br>
+<a href="iscroll/examples/zoom/index.html">Example 1</a>
 </body>
 </html>
  
