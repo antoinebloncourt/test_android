@@ -11,8 +11,39 @@
 </head>
 <body>
 
-<a href="touch_functional.html">Zepto touch functional test</a> | <a href="gesture_functional.html">Zepto gesture functional test</a>
+<ul class="bxslider">
+  <li><img src="flight_folder/fplna.gif" width="600"></li>
+  <li><img src="flight_folder/fplnb.gif" width="600"></li>
+  <li><img src="flight_folder/fplnc.gif" width="600"></li>
+</ul>
 
+<script type="text/javascript">
+$('.bxslider').bxSlider({
+  adaptiveHeight: true,
+  mode: 'horizontal',
+	touchEnabled: false
+});
+
+$(document).ready(function() {
+  
+	$$('.bxslider li').swipeLeft(
+		function() {
+		 alert('swipe left');
+	});
+	
+	$$('.bxslider').pinchOut(
+		function() {
+		 alert('zoom out');
+	});
+
+	$$('.bxslider').pinchIn(
+		function() {
+		 alert('zoom in');
+	});
+
+});
+
+</script>
 
 </body>
 </html>
