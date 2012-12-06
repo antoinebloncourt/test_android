@@ -78,7 +78,7 @@ body {
 	-o-box-sizing:border-box;
 	box-sizing:border-box;
 	display:block; float:left;
-	width:700px; height:800px;
+	width:700px; height:00px;
 	text-align:center;
 	font-family:georgia;
 	font-size:18px;
@@ -89,31 +89,20 @@ body {
 #nav {
 	display:block;
 	width:300px;
-	margin:20px auto 0 auto;
-}
-
-#prev, #next {
-	float:left;
-	font-weight:bold;
-	font-size:14px;
-	padding:5px 0;
-	width:80px;
-}
-
-#next {
-	float:right;
-	text-align:right;
+	margin:100px auto 0 auto;
 }
 
 #indicator, #indicator > li {
-	display:block; float:left;
+	display:block; 
+	float:left;
 	list-style:none;
 	padding:0; margin:0;
 }
 
 #indicator {
-	width:110px;
-	padding:12px 0 0 30px;
+	width:80px;
+	margin:30px auto 0 auto;
+	padding:30px auto 0 auto;
 }
 
 #indicator > li {
@@ -149,15 +138,13 @@ body {
 	</div>
 </div>
 
-  <div id="nav">
-    <div id="prev" onclick="myScroll.scrollToPage('prev', 0);return false">&larr; prev</div>
-    <ul id="indicator">
-      <li class="active">1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-    <div id="next" onclick="myScroll.scrollToPage('next', 0);return false">next &rarr;</div>
-  </div>
+<div style="display:block; width:80px; height:50px; margin:0 auto" align="center">
+  <ul id="indicator">
+    <li class="active">1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</div>
 
 </body>
 </html>
