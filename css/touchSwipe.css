@@ -1,0 +1,42 @@
+/* CSS Document */
+#content
+{
+	width:600px;
+	height:800px;
+	overflow:hidden;
+	position:relative;
+	
+	border : 1px solid black;
+}
+
+#imgs 
+{
+	float:left;
+	display:inline;
+	
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	padding:0;
+	margin:0;
+	
+	width:20000px;
+	
+	/*apply a transfor to kick in the hardware acceleration.  Without this, the first time we add the transform you get odd rendering of the divs (half missing) */
+	-webkit-transform: translate3d(0px,0px,0px); 
+}
+
+
+#imgs img
+{
+	padding:0;
+	margin:0;
+	
+	
+	width:600px;
+	height:800px;
+	
+	/*apply a transfor to kick in the hardware acceleration.  Without this, the first time we add the transform you get odd rendering of the divs (half missing) */
+	-webkit-transform: translate3d(0px,0px,0px); 
+}
+

@@ -13,10 +13,13 @@
 var myScroll;
 
 function loaded() {
-	myScroll = new iScroll('wrapper', {
-		snap: true,
-		momentum: false,
+	myScroll = new iScroll('wrapper', {		
 		zoom: true,
+		zoomMin: 1,
+		zoomMax: 4,
+		doubleTapZoom: 2,
+		wheelAction: 'scroll',
+		snap: true,
 		hScrollbar: false,
 		onScrollEnd: function () {
 			document.querySelector('#indicator > li.active').className = '';
