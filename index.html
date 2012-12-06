@@ -25,16 +25,15 @@ $('.bxslider').bxSlider({
 });
 
 $(document).ready(function() {
-  
-	$$('.bxslider li').swipeLeft(
+  slider = $('.bxslider').bxSlider();
+	
+	$$('.bxslider').swipeLeft(
 		function() {
-			slider = $('.bxslider').bxSlider();
 			slider.goToNextSlide();	
 	});
 
-	$$('.bxslider li').swipeRight(
+	$$('.bxslider').swipeRight(
 		function() {
-			slider = $('.bxslider').bxSlider();
 			slider.goToPrevSlide();	
 	});
 	
