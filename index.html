@@ -28,17 +28,24 @@ $(document).ready(function() {
   
 	$$('.bxslider li').swipeLeft(
 		function() {
-		 alert('swipe left');
+			slider = $('.bxslider').bxSlider();
+			slider.goToNextSlide();	
+	});
+
+	$$('.bxslider li').swipeRight(
+		function() {
+			slider = $('.bxslider').bxSlider();
+			slider.goToPrevSlide();	
 	});
 	
 	$$('.bxslider').pinchOut(
 		function() {
-		 alert('zoom out');
+		 alert('zoom In');
 	});
 
 	$$('.bxslider').pinchIn(
 		function() {
-		 alert('zoom in');
+		 alert('zoom Out');
 	});
 
 });
