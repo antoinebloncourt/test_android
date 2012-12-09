@@ -14,4 +14,7 @@ A simple PhoneGap Build application.
 Your Name
 </author>
 
+<plugin name="File" value="org.apache.cordova.FileUtils" />
+<plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
+
 </widget>
