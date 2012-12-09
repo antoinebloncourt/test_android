@@ -16,6 +16,7 @@ function getFileSystem(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){ // success get file system
 		var sdcard = fileSystem.root;
 		sdcard.getDirectory('DCIM',{create:false}, function(dcim){
+			alert('ok');
 			var gallery = $('#gallery');
 			listDir(dcim, gallery);
 		}, function(error){
