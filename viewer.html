@@ -15,7 +15,7 @@
     }
     
     function onFileSystemSuccess(fileSystem) {
-        fileSystem.root.getDirectory("/storage/sdcard0/Download", {create: false, exclusive: false}, getDirSuccess, fail);
+        fileSystem.root.getDirectory("/sdcard/Download", {create: false, exclusive: false}, getDirSuccess, fail);
     }
     
     function getDirSuccess(dirEntry) {
