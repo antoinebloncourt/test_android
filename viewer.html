@@ -17,7 +17,7 @@
     }
 
     function onFileSystemSuccess(fileSystem) {
-        alert(fileSystem.name);
+    		fileSystem.root.getDirectory("toine", {create: false, exclusive: false}, getDirSuccess, fail);
         alert(fileSystem.root.name);
     }
 
