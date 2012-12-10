@@ -35,8 +35,15 @@
     <script>
       window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
       var fs = null;
-      
-      function errorHandler(e) {
+
+			var myRoot = null;
+			function myRoot() {
+				window.resolveLocalFileSystemURI("/sdcard/Download/DOC", function(dirEntry) {
+					myRoot = dirEntry;
+				});
+			}
+         
+			function errorHandler(e) {
         var msg = '';
         switch (e.code) {
           case FileError.QUOTA_EXCEEDED_ERR:
@@ -75,6 +82,7 @@
           if (!fs) {
             return;
           }
+					alert('fs.root.fullPath: ' + fs.root.fullPath);
           fs.root.getFile('log.txt', {create: true}, null, errorHandler);
           fs.root.getFile('song.mp3', {create: true}, null, errorHandler);
           fs.root.getDirectory('mypictures', {create: true}, null, errorHandler);
