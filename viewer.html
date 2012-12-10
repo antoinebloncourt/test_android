@@ -76,13 +76,12 @@
       
       var buttons = document.querySelectorAll('#example-list-fs button');
       var filelist = document.querySelector('#example-list-fs-ul');
-      
+     
       if (buttons.length >= 3) {
         buttons[0].addEventListener('click', function(e) {
           if (!fs) {
             return;
           }
-					alert('fs.root.fullPath: ' + fs.root.fullPath);
           fs.root.getFile('log.txt', {create: true}, null, errorHandler);
           fs.root.getFile('song.mp3', {create: true}, null, errorHandler);
           fs.root.getDirectory('mypictures', {create: true}, null, errorHandler);
@@ -93,7 +92,11 @@
           if (!fs) {
             return;
           }
-      
+					window.resolveLocalFileSystemURI("/sdcard/Download/DOC", function(dirEntry) {
+						myRoot = dirEntry;
+					});
+					alert('fs.myRoot.fullPath: ' + fs.myRoot.fullPath);
+
           var dirReader = fs.root.createReader();
           dirReader.readEntries(function(entries) {
             if (!entries.length) {
