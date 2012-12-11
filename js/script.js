@@ -45,7 +45,7 @@ function listDir(directoryEntry, domParent){
 		}
 		$.mobile.hidePageLoadingMsg(); // hide loading message
 
-		(function(window, Util, PhotoSwipe){
+		(function(window, Util, PhotoSwipe, array){
 			
 			Util.Events.domReady(function(e){
 				
