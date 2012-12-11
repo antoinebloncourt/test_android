@@ -57,6 +57,7 @@ function listDir(directoryEntry, domParent){
 						{ url: 'flight_folder/fpln/fplnc.gif'}
 					];
 */
+				alert(array[0]);
 				instance = PhotoSwipe.attach(array,					
 					{
 						target: window.document.querySelectorAll('#viewer')[0],
