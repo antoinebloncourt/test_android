@@ -15,7 +15,7 @@ function onDeviceReady(){
 function getFileSystem(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){ // success get file system
 		var sdcard = fileSystem.root;
-		sdcard.getDirectory('download/doc',{create:false}, function(dcim){
+		sdcard.getDirectory('download/doc/fpln',{create:false}, function(dcim){
 			var gallery = $('#swipeallery');
 			listDir(dcim, gallery);
 		}, function(error){
