@@ -23,5 +23,5 @@ body{
 .imageHandler{
     position:absolute;
     z-index:30;
-    background-image:url('_/res/trans.png');
+    background-image:url('../images/trans.png');
 }

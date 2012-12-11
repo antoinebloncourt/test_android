@@ -19,8 +19,8 @@
     var settings = {
       'classname'  : 'appGallery',
       'autoHeight' : false,
-      'height'     : '600px',
-      'width'      : '800px',
+      'height'     : '800px',
+      'width'      : '600px',
       'background' : '#000000',
       'tolerance'  : 0.25,
       'delay'      : 300
