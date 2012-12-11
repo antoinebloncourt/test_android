@@ -7,9 +7,19 @@
 	<link rel="stylesheet" href="mylibs/jQueryMobile/jquery.mobile-1.0.1.min.css" />
 	<script src="mylibs/jquery-1.7.1.min.js"></script>
 	<script src="mylibs/jQueryMobile/jquery.mobile-1.0.1.min.js"></script>
+  
 	<!-- Phonegap setup -->
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 	
+	<!-- Swipe -->
+  <link rel="stylesheet" type="text/css" href="css/jquery.swipegallery.css">
+	<script src="js/jquery.swipegallery.js"></script>
+	<script type="text/javascript" language="Javascript">
+   $(window).load(function() { 
+      $('#swipeallery').swipeGallery({autoHeight: false});  
+   });
+  </script> 
+
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" charset="utf-8" src="js/script.js"></script>
 </head>
@@ -31,7 +41,8 @@
 		<h1>DigitalNoiz</h1>
 	</div>
 	<div data-role="content">
-		<div id="pic"></div>
+    <ul id="swipeallery">
+    </ul>  
 	</div>
 </div>
 

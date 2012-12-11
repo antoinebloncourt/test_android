@@ -8,7 +8,7 @@ var images = new Array();
 // Phonegap is loaded and can be used
 function onDeviceReady(){
 	getFileSystem();
-	showImage();
+	//showImage();
 }
 
 /* make operations on the file system */
@@ -16,7 +16,7 @@ function getFileSystem(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){ // success get file system
 		var sdcard = fileSystem.root;
 		sdcard.getDirectory('download/doc',{create:false}, function(dcim){
-			var gallery = $('#gallery');
+			var gallery = $('#swipeallery');
 			listDir(dcim, gallery);
 		}, function(error){
 			alert(error.code);
@@ -39,8 +39,7 @@ function listDir(directoryEntry, domParent){
 			else domParent.append('<div class="ui-block-b"><div class="thumbnail"><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" /></div></div>');
 			//console.log(entries[i].name);
 			*/
-			if( i%2 == 0) domParent.append('<div class="ui-block-a"><div class="thumbnail">'+entries[i].name+'"</div></div>');
-			else domParent.append('<div class="ui-block-b"><div class="thumbnail">'+entries[i].name+'"</div></div>');
+			domParent.append('<li><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" alt="" title=""/></li>');
 			//console.log(entries[i].name);
 		}
 		$.mobile.hidePageLoadingMsg(); // hide loading message
