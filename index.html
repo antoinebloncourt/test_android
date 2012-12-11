@@ -3,7 +3,9 @@
 <head>
 	<title>DigitalNoiz</title>
 	<!-- jQuery Mobile setup -->
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
 	<link rel="stylesheet" href="mylibs/jQueryMobile/jquery.mobile-1.0.1.min.css" />
 	<script src="mylibs/jquery-1.7.1.min.js"></script>
 	<script src="mylibs/jQueryMobile/jquery.mobile-1.0.1.min.js"></script>
@@ -12,31 +14,48 @@
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 	
 	<!-- Swipe -->
-  <link rel="stylesheet" type="text/css" href="css/jquery.swipegallery.css">
-	<script src="js/jquery.swipegallery.js"></script>
-	<script type="text/javascript" language="Javascript">
-   $(window).load(function() { 
-      $('#swipeallery').swipeGallery({autoHeight: false});  
-   });
-  </script> 
-
+  <link rel="stylesheet" type="text/css" href="css/photoswipe.css">
+  <script src="js/klass.min.js"></script>
+  <script src="js/code.photoswipe-3.0.5.min.js"></script>
+  
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" charset="utf-8" src="js/script.js"></script>
+
+	<script type="text/javascript">
+
+		(function(window, PhotoSwipe){
+		
+			document.addEventListener('DOMContentLoaded', function(){
+			
+				var
+					options = {
+						preventHide: true,
+						getImageSource: function(obj){
+							return obj.url;
+						},
+						getImageCaption: function(obj){
+							return obj.caption;
+						}
+					},
+					instance = PhotoSwipe.attach( 
+						[
+							{ url: 'flight_folder/fpln/fplna.gif', caption: 'Image 001'},
+							{ url: 'flight_folder/fpln/fplnb.gif', caption: 'Image 002'},
+							{ url: 'flight_folder/fpln/fplnc.gif', caption: 'Image 003'}
+						], 
+						options 
+					);
+					
+					instance.show(0);
+					
+			}, false);
+			
+			
+		}(window, window.Code.PhotoSwipe));
+		
+	</script>
 </head>
 <body>
 
-<div data-role="page" id="home">
-	<div data-role="header">
-		<h1>DigitalNoiz</h1>
-	</div>
-	<div data-role="content">
-		<h2>Gallery</h2>
-      <ul id="swipeallery">
-          <li><img id="test1" src="flight_folder/fpln/fplna.gif" alt="" title=""/></li>
-          <li><img src="flight_folder/fpln/fplnb.gif" alt="" title=""/></li>
-          <li><img src="flight_folder/fpln/fplnc.gif" alt="" title=""/></li>
-      </ul>
-	</div>
-</div>
 </body>
 </html>
