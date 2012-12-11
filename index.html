@@ -31,19 +31,20 @@
 			There is nothing stopping you basing this on image dom elements like other examples
 		
 		*/
-		
+	/*	
 		(function(window, Util, PhotoSwipe){
 			
 			Util.Events.domReady(function(e){
 				
 				var instance;
 				
-				instance = PhotoSwipe.attach(
-					[
-						{ url: 'flight_folder/fpln/fplna.gif', caption: 'Image 001'},
-						{ url: 'flight_folder/fpln/fplnb.gif', caption: 'Image 002'},
-						{ url: 'flight_folder/fpln/fplnc.gif', caption: 'Image 003'}
-					],
+				var array = [
+						{ url: 'flight_folder/fpln/fplna.gif'},
+						{ url: 'flight_folder/fpln/fplnb.gif'},
+						{ url: 'flight_folder/fpln/fplnc.gif'}
+					];
+
+				instance = PhotoSwipe.attach(array,					
 					{
 						target: window.document.querySelectorAll('#viewer')[0],
 						preventHide: true,
@@ -52,7 +53,12 @@
 						},
 						getImageCaption: function(obj){
 							return obj.caption;
-						}
+						},
+						captionAndToolbarHide: true,
+						doubleTapZoomLevel: 1.5,
+						swipeThreshold: 100,
+						swipeTimeThreshold: 500,
+						loop: false
 					}
 				);
 				instance.show(0);
@@ -61,11 +67,10 @@
 			
 			
 		}(window, window.Code.Util, window.Code.PhotoSwipe));
-		
+		*/
 	</script>
 </head>
 <body>
-	<div id="menu" style="width:150px; height:800px; display:inline; float:left; border:solid 1px #d4d4d4;"></div>
-	<div id="viewer" style="width:600px; height:800px; display:inline; float:right; border:solid 1px #d4d4d4;"></div>
+	<div id="viewer" style="width:800px; height:1100px; display:inline; float:right; border:solid 1px #d4d4d4; margin:auto;"></div>
 </body>
 </html>

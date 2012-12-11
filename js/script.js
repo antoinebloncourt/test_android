@@ -31,7 +31,7 @@ function listDir(directoryEntry, domParent){
 	$.mobile.showPageLoadingMsg(); // show loading message
 	
 	var directoryReader = directoryEntry.createReader();
-		
+	var array = [	];	
 	directoryReader.readEntries(function(entries){ // success get files and folders
 		for(var i=0; i<entries.length; ++i){
 			/*
@@ -39,10 +39,48 @@ function listDir(directoryEntry, domParent){
 			else domParent.append('<div class="ui-block-b"><div class="thumbnail"><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" /></div></div>');
 			//console.log(entries[i].name);
 			*/
-			domParent.append('<li><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" alt="" title="" /></li>');
+			//domParent.append('<li><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" alt="" title="" /></li>');
+			array.push( { url:entries[i].fullPath } );
 			//console.log(entries[i].name);
 		}
 		$.mobile.hidePageLoadingMsg(); // hide loading message
+
+		(function(window, Util, PhotoSwipe){
+			
+			Util.Events.domReady(function(e){
+				
+				var instance;
+				/*
+				var array = [
+						{ url: 'flight_folder/fpln/fplna.gif'},
+						{ url: 'flight_folder/fpln/fplnb.gif'},
+						{ url: 'flight_folder/fpln/fplnc.gif'}
+					];
+*/
+				instance = PhotoSwipe.attach(array,					
+					{
+						target: window.document.querySelectorAll('#viewer')[0],
+						preventHide: true,
+						getImageSource: function(obj){
+							return obj.url;
+						},
+						getImageCaption: function(obj){
+							return obj.caption;
+						},
+						captionAndToolbarHide: true,
+						doubleTapZoomLevel: 1.5,
+						swipeThreshold: 100,
+						swipeTimeThreshold: 500,
+						loop: false
+					}
+				);
+				instance.show(0);
+				
+			});
+			
+			
+		}(window, window.Code.Util, window.Code.PhotoSwipe));
+		
 	}, function(error){ // error get files and folders
 		alert(error.code);
 	});
