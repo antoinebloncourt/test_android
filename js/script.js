@@ -39,7 +39,7 @@ function listDir(directoryEntry, domParent){
 			else domParent.append('<div class="ui-block-b"><div class="thumbnail"><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" /></div></div>');
 			//console.log(entries[i].name);
 			*/
-			domParent.append('<li><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" alt="" title=""/></li>');
+			domParent.append('<li><img src="'+entries[i].fullPath+'" title="'+entries[i].name+'" alt="" title="" width="600" height="800" /></li>');
 			//console.log(entries[i].name);
 		}
 		$.mobile.hidePageLoadingMsg(); // hide loading message
